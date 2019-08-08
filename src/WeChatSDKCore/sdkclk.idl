@@ -5,7 +5,7 @@
 
 interface WechatSDKClk
 {
-    int WSDKClkRecvTextMsg([in]unsigned int funptr, [in]int pid, [in, string]wchar_t* wxid, [in, string]wchar_t* msg);
+    int WSDKClkRecvTextMsg([in]unsigned int funptr, [in]int pid, [in, string]wchar_t* wxid, [in, string]wchar_t* wxid2, [in, string]wchar_t* msg);
     int WSDKClkRecvTransferMsg([in]unsigned int funptr, [in]int pid, [in, string]wchar_t* wxid, [in, string]wchar_t* tid, [in, string]wchar_t* msg);
     int WSDKClkRecvPayMsg([in]unsigned int funptr, [in]int pid, [in, string]wchar_t* wxid, [in, string]wchar_t* tid, [in, string]wchar_t* msg);
 }

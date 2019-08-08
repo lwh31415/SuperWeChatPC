@@ -18,7 +18,7 @@ int WXUnSaveVoiceMsg(DWORD pid);
 int WXSendTextMsg(DWORD pid, const wchar_t* wxid, const wchar_t* msg);
 int WXSendImageMsg(DWORD pid, const wchar_t* wxid, const wchar_t* path);
 
-typedef int(*PFNRECVTEXTMSG_CALLBACK)(int pid, wchar_t* wxid, wchar_t* msg);
+typedef int(*PFNRECVTEXTMSG_CALLBACK)(int pid, wchar_t* wxid, wchar_t* wxid2, wchar_t* msg);
 int WXRecvTextMsg(DWORD pid, PFNRECVTEXTMSG_CALLBACK funptr);
 
 typedef int(*PFNRECVMONEYMSG_CALLBACK)(int pid, wchar_t* wxid, wchar_t* tid, wchar_t* msg);

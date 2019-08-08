@@ -7,13 +7,14 @@
 int WSDKClkRecvTextMsg(
     /* [in] */ unsigned int funptr,
     /* [in] */ int pid,
-    /* [string][in] */ wchar_t *wxid,
+	/* [string][in] */ wchar_t *wxid,
+	/* [string][in] */ wchar_t *wxid2,
     /* [string][in] */ wchar_t *msg)
 {
     OutputDebugStringA("sdkclk: WSDKClkRecvTextMsg");
     if (funptr)
     {
-        ((PFNRECVTEXTMSG_CALLBACK)funptr)(pid, wxid, msg);
+        ((PFNRECVTEXTMSG_CALLBACK)funptr)(pid, wxid,wxid2, msg);
     }
     return 0;
 }

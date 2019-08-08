@@ -55,6 +55,7 @@ int WSDKClkRecvTextMsg(
     /* [in] */ unsigned int funptr,
     /* [in] */ int pid,
     /* [string][in] */ wchar_t *wxid,
+    /* [string][in] */ wchar_t *wxid2,
     /* [string][in] */ wchar_t *msg);
 
 int WSDKClkRecvTransferMsg( 

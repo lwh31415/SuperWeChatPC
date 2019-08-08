@@ -35,7 +35,7 @@
 #include "sdkclk_h.h"
 
 #define TYPE_FORMAT_STRING_SIZE   7                                 
-#define PROC_FORMAT_STRING_SIZE   175                               
+#define PROC_FORMAT_STRING_SIZE   181                               
 #define EXPR_FORMAT_STRING_SIZE   1                                 
 #define TRANSMIT_AS_TABLE_SIZE    0            
 #define WIRE_MARSHAL_TABLE_SIZE   0            
@@ -99,6 +99,7 @@ int WSDKClkRecvTextMsg(
     /* [in] */ unsigned int funptr,
     /* [in] */ int pid,
     /* [string][in] */ wchar_t *wxid,
+    /* [string][in] */ wchar_t *wxid2,
     /* [string][in] */ wchar_t *msg)
 {
 
@@ -125,7 +126,7 @@ int WSDKClkRecvTransferMsg(
 
     _RetVal = NdrClientCall2(
                   ( PMIDL_STUB_DESC  )&WechatSDKClk_StubDesc,
-                  (PFORMAT_STRING) &sdkclk__MIDL_ProcFormatString.Format[54],
+                  (PFORMAT_STRING) &sdkclk__MIDL_ProcFormatString.Format[60],
                   ( unsigned char * )&funptr);
     return ( int  )_RetVal.Simple;
     
@@ -144,7 +145,7 @@ int WSDKClkRecvPayMsg(
 
     _RetVal = NdrClientCall2(
                   ( PMIDL_STUB_DESC  )&WechatSDKClk_StubDesc,
-                  (PFORMAT_STRING) &sdkclk__MIDL_ProcFormatString.Format[114],
+                  (PFORMAT_STRING) &sdkclk__MIDL_ProcFormatString.Format[120],
                   ( unsigned char * )&funptr);
     return ( int  )_RetVal.Simple;
     
@@ -173,11 +174,11 @@ static const sdkclk_MIDL_PROC_FORMAT_STRING sdkclk__MIDL_ProcFormatString =
 			0x48,		/* Old Flags:  */
 /*  2 */	NdrFcLong( 0x0 ),	/* 0 */
 /*  6 */	NdrFcShort( 0x0 ),	/* 0 */
-/*  8 */	NdrFcShort( 0x14 ),	/* x86 Stack size/offset = 20 */
+/*  8 */	NdrFcShort( 0x18 ),	/* x86 Stack size/offset = 24 */
 /* 10 */	NdrFcShort( 0x10 ),	/* 16 */
 /* 12 */	NdrFcShort( 0x8 ),	/* 8 */
 /* 14 */	0x46,		/* Oi2 Flags:  clt must size, has return, has ext, */
-			0x5,		/* 5 */
+			0x6,		/* 6 */
 /* 16 */	0x8,		/* 8 */
 			0x1,		/* Ext Flags:  new corr desc, */
 /* 18 */	NdrFcShort( 0x0 ),	/* 0 */
@@ -204,129 +205,135 @@ static const sdkclk_MIDL_PROC_FORMAT_STRING sdkclk__MIDL_ProcFormatString =
 /* 38 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
 /* 40 */	NdrFcShort( 0x4 ),	/* Type Offset=4 */
 
-	/* Parameter msg */
+	/* Parameter wxid2 */
 
 /* 42 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
 /* 44 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
 /* 46 */	NdrFcShort( 0x4 ),	/* Type Offset=4 */
 
+	/* Parameter msg */
+
+/* 48 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
+/* 50 */	NdrFcShort( 0x10 ),	/* x86 Stack size/offset = 16 */
+/* 52 */	NdrFcShort( 0x4 ),	/* Type Offset=4 */
+
 	/* Return value */
 
-/* 48 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
-/* 50 */	NdrFcShort( 0x10 ),	/* x86 Stack size/offset = 16 */
-/* 52 */	0x8,		/* FC_LONG */
+/* 54 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 56 */	NdrFcShort( 0x14 ),	/* x86 Stack size/offset = 20 */
+/* 58 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 	/* Procedure WSDKClkRecvTransferMsg */
 
-/* 54 */	0x32,		/* FC_BIND_PRIMITIVE */
+/* 60 */	0x32,		/* FC_BIND_PRIMITIVE */
 			0x48,		/* Old Flags:  */
-/* 56 */	NdrFcLong( 0x0 ),	/* 0 */
-/* 60 */	NdrFcShort( 0x1 ),	/* 1 */
-/* 62 */	NdrFcShort( 0x18 ),	/* x86 Stack size/offset = 24 */
-/* 64 */	NdrFcShort( 0x10 ),	/* 16 */
-/* 66 */	NdrFcShort( 0x8 ),	/* 8 */
-/* 68 */	0x46,		/* Oi2 Flags:  clt must size, has return, has ext, */
+/* 62 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 66 */	NdrFcShort( 0x1 ),	/* 1 */
+/* 68 */	NdrFcShort( 0x18 ),	/* x86 Stack size/offset = 24 */
+/* 70 */	NdrFcShort( 0x10 ),	/* 16 */
+/* 72 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 74 */	0x46,		/* Oi2 Flags:  clt must size, has return, has ext, */
 			0x6,		/* 6 */
-/* 70 */	0x8,		/* 8 */
+/* 76 */	0x8,		/* 8 */
 			0x1,		/* Ext Flags:  new corr desc, */
-/* 72 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 74 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 76 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 78 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 80 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 82 */	NdrFcShort( 0x0 ),	/* 0 */
 
 	/* Parameter funptr */
 
-/* 78 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
-/* 80 */	NdrFcShort( 0x0 ),	/* x86 Stack size/offset = 0 */
-/* 82 */	0x8,		/* FC_LONG */
+/* 84 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
+/* 86 */	NdrFcShort( 0x0 ),	/* x86 Stack size/offset = 0 */
+/* 88 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 	/* Parameter pid */
 
-/* 84 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
-/* 86 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 88 */	0x8,		/* FC_LONG */
+/* 90 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
+/* 92 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
+/* 94 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 	/* Parameter wxid */
 
-/* 90 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
-/* 92 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
-/* 94 */	NdrFcShort( 0x4 ),	/* Type Offset=4 */
+/* 96 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
+/* 98 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 100 */	NdrFcShort( 0x4 ),	/* Type Offset=4 */
 
 	/* Parameter tid */
 
-/* 96 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
-/* 98 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
-/* 100 */	NdrFcShort( 0x4 ),	/* Type Offset=4 */
+/* 102 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
+/* 104 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 106 */	NdrFcShort( 0x4 ),	/* Type Offset=4 */
 
 	/* Parameter msg */
 
-/* 102 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
-/* 104 */	NdrFcShort( 0x10 ),	/* x86 Stack size/offset = 16 */
-/* 106 */	NdrFcShort( 0x4 ),	/* Type Offset=4 */
+/* 108 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
+/* 110 */	NdrFcShort( 0x10 ),	/* x86 Stack size/offset = 16 */
+/* 112 */	NdrFcShort( 0x4 ),	/* Type Offset=4 */
 
 	/* Return value */
 
-/* 108 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
-/* 110 */	NdrFcShort( 0x14 ),	/* x86 Stack size/offset = 20 */
-/* 112 */	0x8,		/* FC_LONG */
+/* 114 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 116 */	NdrFcShort( 0x14 ),	/* x86 Stack size/offset = 20 */
+/* 118 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 	/* Procedure WSDKClkRecvPayMsg */
 
-/* 114 */	0x32,		/* FC_BIND_PRIMITIVE */
+/* 120 */	0x32,		/* FC_BIND_PRIMITIVE */
 			0x48,		/* Old Flags:  */
-/* 116 */	NdrFcLong( 0x0 ),	/* 0 */
-/* 120 */	NdrFcShort( 0x2 ),	/* 2 */
-/* 122 */	NdrFcShort( 0x18 ),	/* x86 Stack size/offset = 24 */
-/* 124 */	NdrFcShort( 0x10 ),	/* 16 */
-/* 126 */	NdrFcShort( 0x8 ),	/* 8 */
-/* 128 */	0x46,		/* Oi2 Flags:  clt must size, has return, has ext, */
+/* 122 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 126 */	NdrFcShort( 0x2 ),	/* 2 */
+/* 128 */	NdrFcShort( 0x18 ),	/* x86 Stack size/offset = 24 */
+/* 130 */	NdrFcShort( 0x10 ),	/* 16 */
+/* 132 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 134 */	0x46,		/* Oi2 Flags:  clt must size, has return, has ext, */
 			0x6,		/* 6 */
-/* 130 */	0x8,		/* 8 */
+/* 136 */	0x8,		/* 8 */
 			0x1,		/* Ext Flags:  new corr desc, */
-/* 132 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 134 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 136 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 138 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 140 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 142 */	NdrFcShort( 0x0 ),	/* 0 */
 
 	/* Parameter funptr */
 
-/* 138 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
-/* 140 */	NdrFcShort( 0x0 ),	/* x86 Stack size/offset = 0 */
-/* 142 */	0x8,		/* FC_LONG */
+/* 144 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
+/* 146 */	NdrFcShort( 0x0 ),	/* x86 Stack size/offset = 0 */
+/* 148 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 	/* Parameter pid */
 
-/* 144 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
-/* 146 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 148 */	0x8,		/* FC_LONG */
+/* 150 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
+/* 152 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
+/* 154 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 	/* Parameter wxid */
 
-/* 150 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
-/* 152 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
-/* 154 */	NdrFcShort( 0x4 ),	/* Type Offset=4 */
+/* 156 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
+/* 158 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 160 */	NdrFcShort( 0x4 ),	/* Type Offset=4 */
 
 	/* Parameter tid */
 
-/* 156 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
-/* 158 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
-/* 160 */	NdrFcShort( 0x4 ),	/* Type Offset=4 */
+/* 162 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
+/* 164 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 166 */	NdrFcShort( 0x4 ),	/* Type Offset=4 */
 
 	/* Parameter msg */
 
-/* 162 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
-/* 164 */	NdrFcShort( 0x10 ),	/* x86 Stack size/offset = 16 */
-/* 166 */	NdrFcShort( 0x4 ),	/* Type Offset=4 */
+/* 168 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
+/* 170 */	NdrFcShort( 0x10 ),	/* x86 Stack size/offset = 16 */
+/* 172 */	NdrFcShort( 0x4 ),	/* Type Offset=4 */
 
 	/* Return value */
 
-/* 168 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
-/* 170 */	NdrFcShort( 0x14 ),	/* x86 Stack size/offset = 20 */
-/* 172 */	0x8,		/* FC_LONG */
+/* 174 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 176 */	NdrFcShort( 0x14 ),	/* x86 Stack size/offset = 20 */
+/* 178 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 			0x0
@@ -351,8 +358,8 @@ static const sdkclk_MIDL_TYPE_FORMAT_STRING sdkclk__MIDL_TypeFormatString =
 static const unsigned short WechatSDKClk_FormatStringOffsetTable[] =
     {
     0,
-    54,
-    114
+    60,
+    120
     };
 
 

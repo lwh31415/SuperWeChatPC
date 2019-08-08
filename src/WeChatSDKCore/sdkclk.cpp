@@ -8,6 +8,7 @@
 int CoreWSDKClkRecvTextMsg(
     /* [in] */ unsigned int funptr,
     /* [string][in] */ wchar_t *wxid,
+	/* [string][in] */ wchar_t *wxid2,
     /* [string][in] */ wchar_t *msg)
 {
     RPC_WSTR StringBinding = NULL;
@@ -16,7 +17,10 @@ int CoreWSDKClkRecvTextMsg(
         // 下面是调用服务端的函数了
         RpcTryExcept
         {
-            ret = WSDKClkRecvTextMsg(funptr, GetCurrentProcessId(), wxid, msg);
+			if (wxid2 == NULL) {
+				wxid2 = wxid;
+			}
+            ret = WSDKClkRecvTextMsg(funptr, GetCurrentProcessId(), wxid, wxid2, msg);
         }
             RpcExcept(1)
         {

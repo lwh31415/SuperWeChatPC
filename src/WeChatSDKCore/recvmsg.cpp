@@ -65,6 +65,7 @@ int __stdcall fakeRecvTextMsg(PRecvMsgPack msg)
             CoreWSDKClkRecvTextMsg(
                 pfnRecvTextMsgClk,
                 msg->msg->wxid1.buf,
+				msg->msg->wxid2.buf,
                 msg->msg->msg.buf
             );
         }
